@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { addToDo } from '../store/actions';
+import * as actions from '../store/actions';
 
 const AddToDo = ({ addToDo }) => {
   const inputForm = useRef('');
@@ -31,4 +32,8 @@ const AddToDo = ({ addToDo }) => {
   );
 };
 
-export default connect(null, { addToDo })(AddToDo);
+AddToDo.propTypes = {
+  addToDo: PropTypes.func.isRequired,
+};
+
+export default connect(null, actions)(AddToDo);

@@ -1,9 +1,15 @@
 export const ADD_TODO = 'ADD_TODO';
+export const LOAD_TODO_LIST = 'LOAD_TODO_LIST';
+export const RENDER_TODO_LIST = 'RENDER_TODO_LIST';
 
 export const addToDo = title => ({
   type: ADD_TODO,
   payload: {
-    _id: new Date().getTime().toString(),
+    _id: new Date().getTime(),
     title,
   },
+});
+
+export const loadToDoList = () => ({
+  type: LOAD_TODO_LIST,
 });
